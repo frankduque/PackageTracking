@@ -30,21 +30,34 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         // Valida a solicitação
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'codigos' => 'required|string', // Requer pelo menos um código
         ]);
+
+        // Se a validação falhar, retorna uma resposta JSON com os erros de validação
+        if ($validator->fails()) {
+            if ($request->expectsJson()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            } else {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+        }
 
         // Separa os códigos usando vírgula como delimitador e remove os espaços em branco ao redor de cada código
         $codigos = array_map('trim', explode(',', $request->codigos));
 
         // Validação adicional para cada código
         $validator = Validator::make(['codigos' => $codigos], [
-            'codigos.*' => 'required|string|max:13|unique:packages,codigo',
+            'codigos.*' => 'required|string|max:13|unique:packages,codigo|alpha_num',
         ]);
 
-        // Se a validação falhar, redireciona de volta com mensagens de erro
+        // Se a validação adicional falhar, retorna uma resposta JSON com os erros de validação
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            if ($request->expectsJson()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            } else {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
         }
 
         $data = array_map(function ($codigo) {

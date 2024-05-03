@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# PackageTracking
 
-## About Laravel
+Esta é uma aplicação web para rastreamento e acompanhamento de pacotes. Com ela, você pode facilmente acompanhar o status de seus pacotes e as informações relacionadas a eles. Além disso, a aplicação oferece uma API para integração com outros sistemas e automatização de tarefas de rastreamento. Mantendo-se informado sobre o status de seus pacotes de forma rápida e eficiente.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Conteúdo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. [Funcionalidades](#funcionalidades)
+2. [Instalação](#instalação)
+3. [Documentação da API](#documentação-da-api)
+5. [Autores](#autores)
+## Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Temas dark e light
+- Preview em tempo real
+- Modo tela cheia
+- Multiplataforma
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalação
+### Requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Para executar este projeto, você precisará das seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **PHP:** Versão 8.2 ou superior.
+- **Composer:** Para gerenciar as dependências PHP do projeto.
+- **Node.js e npm:** Para gerenciar as dependências JavaScript e construir os ativos front-end.
+- **Laravel:** Este projeto foi desenvolvido com Laravel, um framework PHP moderno e poderoso. Certifique-se de verificar os [requisitos de instalação do Laravel](https://laravel.com/docs/installation#server-requirements) para obter mais detalhes.
+- **Banco de dados:** Um banco de dados MySQL, PostgreSQL ou SQLite é necessário para armazenar os dados do aplicativo.
 
-## Laravel Sponsors
+Certifique-se de que todas essas dependências estejam instaladas e configuradas corretamente antes de prosseguir com a instalação do projeto. Para mais detalhes sobre como instalar e configurar o Laravel, consulte a [documentação oficial do Laravel](https://laravel.com/docs).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Passos de Instalação
 
-### Premium Partners
+1. Clone este repositório:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    ```bash
+    git clone https://github.com/frankduque/PackageTracking.git
+    ```
 
-## Contributing
+2. Navegue até o diretório do projeto:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    cd PackageTracking
+    ```
 
-## Code of Conduct
+3. Instale as dependências com npm:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    npm install --production
+    ```
 
-## Security Vulnerabilities
+4. Instale as dependências do Composer:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    composer install --optimize-autoloader --no-dev
+    ```
 
-## License
+5. Copie o arquivo `.env.example` para `.env`:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    cp .env.example .env
+    ```
+
+6. Configure o arquivo `.env` conforme necessário.
+
+Antes de iniciar o projeto, é necessário configurar o arquivo `.env`. Este arquivo é utilizado para definir as variáveis de ambiente necessárias para a execução do aplicativo.
+
+Aqui estão algumas variáveis de ambiente que você precisa configurar no arquivo `.env`:
+
+- **Login e senha do usuário padrão:** Defina o login e a senha padrão para o usuário de acesso ao sistema. Essas credenciais podem ser utilizadas para acessar o sistema após a instalação inicial. Esses dados serão usados apenas no primeiro seed de informações no banco de dados, na criação do usuário.
+- **Credenciais da API dos correios:** Aqui é o local apropriado para definir as credenciais de acesso à API.
+- **Detalhes do banco de dados:** Encontre o conjunto de variáveis com o prefixo DB_ e defina dos dados de acordo com sua instalação do banco de dados.
+- **DAYS_WITHOUT_UPDATE:** Esta variável define a quantidade de dias sem atualização do pacote entregue para exclusão automática do sistema. Certifique-se de ajustar este valor de acordo com os requisitos do seu aplicativo.
+
+Certifique-se de preencher essas informações de acordo com as necessidades do seu projeto antes de iniciar a aplicação.
+
+7. Gere a chave de aplicativo:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+8. Execute as migrações do banco de dados:
+
+    ```bash
+    php artisan migrate
+    ```
+
+9. Execute os seeds (criação do usuário):
+
+    ```bash
+    php artisan db:seed
+    ```
+
+10. Compile os assets do frontend:
+
+    ```bash
+    npm run prod
+    ```
+
+11. Configure seu servidor web para servir o diretório `public` do aplicativo.
+
+## Documentação da API
+
+Encontre a documentação completa da API [clicando aqui](/API.md)
+
+## Autores
+
+- [@frankduque](https://github.com/frankduque)
+

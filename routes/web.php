@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    //redirect to the packages index
+    return redirect()->route('packages.index');
 });
 
 Route::get('/dashboard', function () {
