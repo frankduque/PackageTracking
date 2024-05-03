@@ -44,4 +44,18 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $token = $user->createToken('auth_token')->plainTextToken;
+            return response()->json(['token' => $token], 200);
+
+        }
+
+        return response()->json(['message' => 'Unauthenticated'], 401);
+    }
 }
