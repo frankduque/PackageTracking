@@ -12,10 +12,17 @@ Esta é uma aplicação web para rastreamento e acompanhamento de pacotes. Com e
 
 ## Funcionalidades
 
--   Temas dark e light
--   Preview em tempo real
--   Modo tela cheia
--   Multiplataforma
+-  Autenticação de usuários
+-  Listagem de pacotes
+-  Adição de pacotes
+-  Exclusão de pacotes
+-  Integração com API externa para rastreamento de pacotes
+-  Agendamento de tarefas para atualização automática de pacotes
+-  Agendamento de tarefas para exclusão automática de pacotes
+-  API REST para gerenciamento de pacotes:
+   -  Adicionar pacotes
+   -  Listar pacotes
+   -  Solicitar atualização única de pacotes
 
 ## Instalação
 
