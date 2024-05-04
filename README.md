@@ -7,8 +7,8 @@ Esta é uma aplicação web para rastreamento e acompanhamento de pacotes. Com e
 1. [Funcionalidades](#funcionalidades)
 2. [Instalação](#instalação)
 3. [Documentação da API](#documentação-da-api)
-3. [Comandos/Crontab](#comandos/crontab)
-4. [Autores](#autores)
+4. [Comandos/Crontab](#comandos/crontab)
+5. [Autores](#autores)
 
 ## Funcionalidades
 
