@@ -55,7 +55,7 @@ Certifique-se de que todas essas dependências estejam instaladas e configuradas
 3. Instale as dependências com npm:
 
     ```bash
-    npm install --production
+    npm install --omit=dev
     ```
 
 4. Instale as dependências do Composer:
