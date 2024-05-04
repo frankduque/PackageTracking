@@ -7,7 +7,7 @@ Esta é uma aplicação web para rastreamento e acompanhamento de pacotes. Com e
 1. [Funcionalidades](#funcionalidades)
 2. [Instalação](#instalação)
 3. [Documentação da API](#documentação-da-api)
-4. [Comandos/Crontab](#comandos/crontab)
+4. [Comandos](#comandos)
 5. [Autores](#autores)
 
 ## Funcionalidades
@@ -106,7 +106,7 @@ Certifique-se de preencher essas informações de acordo com as necessidades do 
 
 Encontre a documentação completa da API [clicando aqui](/API.md)
 
-## Comandos/Crontab
+## Comandos
 
 Para automatizar a execução dos processos de atulização e remoção dos processos foram criados comandos personalizados do Laravel, você pode configurar agendamentos no Crontab do seu servidor. O Crontab é uma ferramenta utilizada no Linux para agendar a execução de tarefas em horários específicos.
 
