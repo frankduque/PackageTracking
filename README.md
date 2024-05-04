@@ -46,31 +46,42 @@ Certifique-se de que todas essas dependências estejam instaladas e configuradas
     git clone https://github.com/frankduque/PackageTracking.git
     ```
 
+
+
 2. Navegue até o diretório do projeto:
 
     ```bash
     cd PackageTracking
     ```
 
-3. Instale as dependências com npm:
+3. Defina as permissões necessárias:
+
+```bash
+    sudo chgrp -R www-data storage bootstrap/cache 
+```
+```bash
+    sudo chmod -R ug+rwx storage bootstrap/cache 
+```
+
+4. Instale as dependências com npm:
 
     ```bash
     npm install --omit=dev
     ```
 
-4. Instale as dependências do Composer:
+5. Instale as dependências do Composer:
 
     ```bash
     composer install --optimize-autoloader --no-dev
     ```
 
-5. Copie o arquivo `.env.example` para `.env`:
+6. Copie o arquivo `.env.example` para `.env`:
 
     ```bash
     cp .env.example .env
     ```
 
-6. Configure o arquivo `.env` conforme necessário.
+7. Configure o arquivo `.env` conforme necessário.
 
 Antes de iniciar o projeto, é necessário configurar o arquivo `.env`. Este arquivo é utilizado para definir as variáveis de ambiente necessárias para a execução do aplicativo.
 
@@ -83,31 +94,31 @@ Aqui estão algumas variáveis de ambiente que você precisa configurar no arqui
 
 Certifique-se de preencher essas informações de acordo com as necessidades do seu projeto antes de iniciar a aplicação.
 
-7. Gere a chave de aplicativo:
+8. Gere a chave de aplicativo:
 
     ```bash
     php artisan key:generate
     ```
 
-8. Execute as migrações do banco de dados:
+9. Execute as migrações do banco de dados:
 
     ```bash
     php artisan migrate
     ```
 
-9. Execute os seeds (criação do usuário):
+10. Execute os seeds (criação do usuário):
 
     ```bash
     php artisan db:seed
     ```
 
-10. Compile os assets do frontend:
+11. Compile os assets do frontend:
 
     ```bash
     npm run prod
     ```
 
-11. Configure seu servidor web para servir o diretório `public` do aplicativo.
+12. Configure seu servidor web para servir o diretório `public` do aplicativo.
 
 ## Documentação da API
 
